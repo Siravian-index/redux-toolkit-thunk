@@ -4,6 +4,9 @@ import App from './App'
 import './index.css'
 import {Provider} from "react-redux";
 import {store} from "./app/store";
+import {getAllUsersThunk} from "./features/userSlice";
+
+store.dispatch(getAllUsersThunk())
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

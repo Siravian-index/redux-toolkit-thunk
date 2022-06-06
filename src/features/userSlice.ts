@@ -65,6 +65,8 @@ export const userSlice = createSlice({
     //thunk
     extraReducers: (builder) => {
         builder.addCase(getAllUsersThunk.fulfilled, (state, action:PayloadAction<IUser[]>) => {
+            console.log("inside builder success")
+            console.log(action.payload)
             state.push(...action.payload)
         })
         builder.addCase(getAllUsersThunk.pending,(state, action) => {

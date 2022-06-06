@@ -1,9 +1,9 @@
 import './App.css'
 import { useSelector} from "react-redux";
 import {addUser, getAllUsersThunk, IdType, removeUser, selectAppState} from "./features/userSlice";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {nanoid} from "nanoid";
-import {useAppDispatch} from "./app/store";
+import {store, useAppDispatch} from "./app/store";
 
 function App() {
     //redux
@@ -12,9 +12,6 @@ function App() {
     //redux
     const dispatch = useAppDispatch()
 
-    useEffect(() => {
-        dispatch(getAllUsersThunk())
-    }, [dispatch])
 
     //react
     const [userInput, setUserInput] = useState("")
